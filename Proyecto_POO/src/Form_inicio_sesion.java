@@ -104,7 +104,6 @@ public class Form_inicio_sesion extends javax.swing.JFrame {
         jPanel5.add(btn_form_iniciar_sesion, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 290, -1, 30));
 
         txt_contrasenia.setBackground(new java.awt.Color(80, 80, 80));
-        txt_contrasenia.setText("txt_contrasenia");
         txt_contrasenia.setBorder(null);
         jPanel5.add(txt_contrasenia, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 190, 170, 20));
 
@@ -153,6 +152,9 @@ public class Form_inicio_sesion extends javax.swing.JFrame {
         String cor = txt_correo.getText();
         String con = new String(txt_contrasenia.getPassword());
         String depa = txt_departamento.getText();
+        if (con.length() >=8){
+            JOptionPane.showMessageDialog(this, "La contraseña debe ser de 8 caracteres","Error", JOptionPane.ERROR_MESSAGE);
+        }
         if (!cor.matches("^[\\w-.]+@([\\w-]+\\.)+[\\w-]{2,4}$")) {
             JOptionPane.showMessageDialog(this, "Formato de correo electrónico inválido","Error", JOptionPane.ERROR_MESSAGE);
             return;
