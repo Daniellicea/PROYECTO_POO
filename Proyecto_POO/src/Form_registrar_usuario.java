@@ -224,7 +224,10 @@ public class Form_registrar_usuario extends javax.swing.JFrame {
         String nom = txt_usuario.getText();
         String cor = txt_correo.getText();
         String con = txt_contrasenia.getText();
-
+        if ((con.length() <8)){
+            JOptionPane.showMessageDialog(this, "La contraseña debe ser de 8 caracteres","Error", JOptionPane.ERROR_MESSAGE);
+            return;
+        } 
         // Validación del formato del correo electrónico
         if (!cor.matches("^[\\w-.]+@([\\w-]+\\.)+[\\w-]{2,4}$")) {
             JOptionPane.showMessageDialog(this, "Formato de correo electrónico inválido", "Error", JOptionPane.ERROR_MESSAGE);

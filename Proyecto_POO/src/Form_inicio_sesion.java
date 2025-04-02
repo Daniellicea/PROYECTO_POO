@@ -30,8 +30,10 @@ public class Form_inicio_sesion extends javax.swing.JFrame {
         jLabel4 = new javax.swing.JLabel();
         jSeparator7 = new javax.swing.JSeparator();
         btn_form_iniciar_sesion = new javax.swing.JPanel();
+        jLabel6 = new javax.swing.JLabel();
         txt_contrasenia = new javax.swing.JPasswordField();
         btn_form_iniciar_sesion1 = new javax.swing.JPanel();
+        jLabel7 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -90,15 +92,17 @@ public class Form_inicio_sesion extends javax.swing.JFrame {
             }
         });
 
+        jLabel6.setText("Ingresar");
+
         javax.swing.GroupLayout btn_form_iniciar_sesionLayout = new javax.swing.GroupLayout(btn_form_iniciar_sesion);
         btn_form_iniciar_sesion.setLayout(btn_form_iniciar_sesionLayout);
         btn_form_iniciar_sesionLayout.setHorizontalGroup(
             btn_form_iniciar_sesionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 100, Short.MAX_VALUE)
+            .addComponent(jLabel6, javax.swing.GroupLayout.DEFAULT_SIZE, 116, Short.MAX_VALUE)
         );
         btn_form_iniciar_sesionLayout.setVerticalGroup(
             btn_form_iniciar_sesionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 30, Short.MAX_VALUE)
+            .addComponent(jLabel6, javax.swing.GroupLayout.DEFAULT_SIZE, 30, Short.MAX_VALUE)
         );
 
         jPanel5.add(btn_form_iniciar_sesion, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 290, -1, 30));
@@ -113,15 +117,19 @@ public class Form_inicio_sesion extends javax.swing.JFrame {
             }
         });
 
+        jLabel7.setText("Registrar usuario");
+
         javax.swing.GroupLayout btn_form_iniciar_sesion1Layout = new javax.swing.GroupLayout(btn_form_iniciar_sesion1);
         btn_form_iniciar_sesion1.setLayout(btn_form_iniciar_sesion1Layout);
         btn_form_iniciar_sesion1Layout.setHorizontalGroup(
             btn_form_iniciar_sesion1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 100, Short.MAX_VALUE)
+            .addComponent(jLabel7, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 100, Short.MAX_VALUE)
         );
         btn_form_iniciar_sesion1Layout.setVerticalGroup(
             btn_form_iniciar_sesion1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 30, Short.MAX_VALUE)
+            .addGroup(btn_form_iniciar_sesion1Layout.createSequentialGroup()
+                .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
 
         jPanel5.add(btn_form_iniciar_sesion1, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 290, -1, -1));
@@ -152,9 +160,7 @@ public class Form_inicio_sesion extends javax.swing.JFrame {
         String cor = txt_correo.getText();
         String con = new String(txt_contrasenia.getPassword());
         String depa = txt_departamento.getText();
-        if (!(con.length() <8)){
-            JOptionPane.showMessageDialog(this, "La contraseña debe ser de 8 caracteres","Error", JOptionPane.ERROR_MESSAGE);
-        } 
+        
 
         if (!cor.matches("^[\\w-.]+@([\\w-]+\\.)+[\\w-]{2,4}$")) {
             JOptionPane.showMessageDialog(this, "Formato de correo electrónico inválido","Error", JOptionPane.ERROR_MESSAGE);
@@ -210,6 +216,8 @@ public class Form_inicio_sesion extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel5;
     private javax.swing.JSeparator jSeparator4;
