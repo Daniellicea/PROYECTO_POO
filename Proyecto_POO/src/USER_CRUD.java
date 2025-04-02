@@ -10,8 +10,8 @@ public class USER_CRUD {
         conexion = Conexion.conectar();
     }
     
-   public  boolean InsertUsuario (String nombre, String apellidos , String correo, String contra){
-        String insertSQL="Insert into usuarios(nombre, apellidos , correo,contrasenia) values (?,?,?,?)";
+   public  boolean InsertUsuario (String nombre, String apellidos , String correo, String contra, String depa){
+        String insertSQL="Insert into usuarios(nombre, apellidos , correo,contrasenia, departamento) values (?,?,?,?,?)";
         
         try{
             PreparedStatement ps = conexion.prepareStatement(insertSQL);
@@ -19,6 +19,7 @@ public class USER_CRUD {
             ps.setString(2,apellidos);
             ps.setString(3,correo);
             ps.setString(4,contra);
+            ps.setString(5,depa);
             
             return ps.executeUpdate()>0;
         }catch(SQLException e){
@@ -42,14 +43,15 @@ public class USER_CRUD {
         }
     }
  
-public boolean verificar_inicio_sesion(String correo, String contra) {
-    String verificar = "SELECT * FROM usuarios WHERE correo = ? AND contrasenia = ?";
+public boolean verificar_inicio_sesion(String correo, String contra, String depa) {
+    String verificar = "SELECT * FROM usuarios WHERE correo = ? AND contrasenia = ? AND departamento = ?";
     
     try {
         // Preparar la consulta
         PreparedStatement verifi = conexion.prepareStatement(verificar);
         verifi.setString(1, correo);
         verifi.setString(2, contra);
+        verifi.setString(3, depa);
 
         // Ejecutar la consulta y obtener los resultados
         ResultSet rs = verifi.executeQuery();
@@ -62,6 +64,8 @@ public boolean verificar_inicio_sesion(String correo, String contra) {
         return false;
         }
     }
+
+
     public ResultSet Buscar_por_id (int id){
         String sq_buscar_id = "Select * from usuarios where id_usuario = ? ";
         try{

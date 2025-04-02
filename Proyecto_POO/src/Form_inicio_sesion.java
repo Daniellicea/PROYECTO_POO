@@ -8,7 +8,7 @@ public class Form_inicio_sesion extends javax.swing.JFrame {
     public Form_inicio_sesion() {
         initComponents();
         this.setResizable(false);
-        this.setLocationRelativeTo(this);
+       // this.setLocationRelativeTo(this);
         //this.setIconImage(img.getImage());
     }
 
@@ -23,13 +23,15 @@ public class Form_inicio_sesion extends javax.swing.JFrame {
         jSeparator5 = new javax.swing.JSeparator();
         jLabel1 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
-        txt_correo = new javax.swing.JTextField();
         lb_correo = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
+        txt_departamento = new javax.swing.JTextField();
+        txt_correo = new javax.swing.JTextField();
+        jLabel4 = new javax.swing.JLabel();
+        jSeparator7 = new javax.swing.JSeparator();
+        btn_form_iniciar_sesion = new javax.swing.JPanel();
+        btn_form_registro = new javax.swing.JPanel();
         txt_contrasenia = new javax.swing.JPasswordField();
-        lb_olvido_contraseña = new javax.swing.JLabel();
-        btn_iniciar_sesion = new javax.swing.JPanel();
-        lb_iniciar_sesion = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -53,76 +55,79 @@ public class Form_inicio_sesion extends javax.swing.JFrame {
         jLabel5.setText("SESION");
         jPanel5.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 60, -1, -1));
 
-        txt_correo.setBackground(new java.awt.Color(80, 80, 80));
-        txt_correo.setForeground(new java.awt.Color(255, 255, 255));
-        txt_correo.setBorder(null);
-        txt_correo.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txt_correoActionPerformed(evt);
-            }
-        });
-        jPanel5.add(txt_correo, new org.netbeans.lib.awtextra.AbsoluteConstraints(81, 140, 190, 20));
-
         lb_correo.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         lb_correo.setForeground(new java.awt.Color(255, 255, 255));
         lb_correo.setText("Ingrese su correo");
-        jPanel5.add(lb_correo, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 120, -1, -1));
+        jPanel5.add(lb_correo, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 120, -1, 20));
 
         jLabel2.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel2.setText("Ingrese su contraseña");
-        jPanel5.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 170, -1, -1));
+        jLabel2.setText("Ingrese su departamento");
+        jPanel5.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 230, -1, -1));
+
+        txt_departamento.setBackground(new java.awt.Color(80, 80, 80));
+        txt_departamento.setBorder(null);
+        txt_departamento.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txt_departamentoActionPerformed(evt);
+            }
+        });
+        jPanel5.add(txt_departamento, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 250, 170, 20));
+
+        txt_correo.setBackground(new java.awt.Color(80, 80, 80));
+        txt_correo.setBorder(null);
+        jPanel5.add(txt_correo, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 140, 170, 20));
+
+        jLabel4.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel4.setText("Ingrese su contraseña");
+        jPanel5.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 177, -1, 10));
+        jPanel5.add(jSeparator7, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 270, 170, -1));
+
+        btn_form_iniciar_sesion.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btn_form_iniciar_sesionMouseClicked(evt);
+            }
+        });
+
+        javax.swing.GroupLayout btn_form_iniciar_sesionLayout = new javax.swing.GroupLayout(btn_form_iniciar_sesion);
+        btn_form_iniciar_sesion.setLayout(btn_form_iniciar_sesionLayout);
+        btn_form_iniciar_sesionLayout.setHorizontalGroup(
+            btn_form_iniciar_sesionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 100, Short.MAX_VALUE)
+        );
+        btn_form_iniciar_sesionLayout.setVerticalGroup(
+            btn_form_iniciar_sesionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 30, Short.MAX_VALUE)
+        );
+
+        jPanel5.add(btn_form_iniciar_sesion, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 290, -1, 30));
+
+        btn_form_registro.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btn_form_registroMouseClicked(evt);
+            }
+        });
+
+        javax.swing.GroupLayout btn_form_registroLayout = new javax.swing.GroupLayout(btn_form_registro);
+        btn_form_registro.setLayout(btn_form_registroLayout);
+        btn_form_registroLayout.setHorizontalGroup(
+            btn_form_registroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 100, Short.MAX_VALUE)
+        );
+        btn_form_registroLayout.setVerticalGroup(
+            btn_form_registroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 30, Short.MAX_VALUE)
+        );
+
+        jPanel5.add(btn_form_registro, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 290, -1, -1));
 
         txt_contrasenia.setBackground(new java.awt.Color(80, 80, 80));
-        txt_contrasenia.setForeground(new java.awt.Color(255, 255, 255));
+        txt_contrasenia.setText("txt_contrasenia");
         txt_contrasenia.setBorder(null);
-        txt_contrasenia.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txt_contraseniaActionPerformed(evt);
-            }
-        });
-        jPanel5.add(txt_contrasenia, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 190, 211, 20));
+        jPanel5.add(txt_contrasenia, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 190, 170, 20));
 
-        lb_olvido_contraseña.setForeground(new java.awt.Color(255, 255, 255));
-        lb_olvido_contraseña.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lb_olvido_contraseña.setText("¿Olvidaste tu contraseña?");
-        lb_olvido_contraseña.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        lb_olvido_contraseña.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                lb_olvido_contraseñaMouseClicked(evt);
-            }
-        });
-        jPanel5.add(lb_olvido_contraseña, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 260, 220, -1));
-
-        btn_iniciar_sesion.setBackground(new java.awt.Color(36, 36, 36));
-        btn_iniciar_sesion.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        btn_iniciar_sesion.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                btn_iniciar_sesionMouseClicked(evt);
-            }
-        });
-
-        lb_iniciar_sesion.setBackground(new java.awt.Color(255, 255, 255));
-        lb_iniciar_sesion.setForeground(new java.awt.Color(255, 255, 255));
-        lb_iniciar_sesion.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lb_iniciar_sesion.setText("Iniciar sesion");
-
-        javax.swing.GroupLayout btn_iniciar_sesionLayout = new javax.swing.GroupLayout(btn_iniciar_sesion);
-        btn_iniciar_sesion.setLayout(btn_iniciar_sesionLayout);
-        btn_iniciar_sesionLayout.setHorizontalGroup(
-            btn_iniciar_sesionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(lb_iniciar_sesion, javax.swing.GroupLayout.DEFAULT_SIZE, 100, Short.MAX_VALUE)
-        );
-        btn_iniciar_sesionLayout.setVerticalGroup(
-            btn_iniciar_sesionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, btn_iniciar_sesionLayout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(lb_iniciar_sesion, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
-        );
-
-        jPanel5.add(btn_iniciar_sesion, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 230, 100, 30));
-
-        jPanel4.add(jPanel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 40, 340, 320));
+        jPanel4.add(jPanel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 40, 340, 350));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -140,47 +145,35 @@ public class Form_inicio_sesion extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void txt_correoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txt_correoActionPerformed
+    private void txt_departamentoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txt_departamentoActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_txt_correoActionPerformed
+    }//GEN-LAST:event_txt_departamentoActionPerformed
 
-    private void txt_contraseniaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txt_contraseniaActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txt_contraseniaActionPerformed
-
-    private void lb_olvido_contraseñaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lb_olvido_contraseñaMouseClicked
-        //Form_olvido_contraseña menu = new Form_olvido_contraseña();
-        //menu.setVisible(true);
-        //this.dispose();
-
-    }//GEN-LAST:event_lb_olvido_contraseñaMouseClicked
-
-    private void btn_iniciar_sesionMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_iniciar_sesionMouseClicked
-        String correo = txt_correo.getText();
-        String contrasenia = new String(txt_contrasenia.getPassword());
-
-        if (!correo.matches("^[\\w-.]+@([\\w-]+\\.)+[\\w-]{2,4}$")) {
+    private void btn_form_iniciar_sesionMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_form_iniciar_sesionMouseClicked
+        String cor = txt_correo.getText();
+        String con = new String(txt_contrasenia.getPassword());
+        String depa = txt_departamento.getText();
+        if (!cor.matches("^[\\w-.]+@([\\w-]+\\.)+[\\w-]{2,4}$")) {
             JOptionPane.showMessageDialog(this, "Formato de correo electrónico inválido","Error", JOptionPane.ERROR_MESSAGE);
             return;
         }
-        //verificamos campos vacios
-        if (correo.isEmpty() || contrasenia.isEmpty()){
+        if (cor.isEmpty() || con.isEmpty() || depa.isEmpty()){
             JOptionPane.showMessageDialog(this,"Todos los campos son obligatorios","Error",JOptionPane.ERROR_MESSAGE );
-            return ;
-    }//GEN-LAST:event_btn_iniciar_sesionMouseClicked
+            return ;       
+        }
         try {        
         USER_CRUD usuario = new USER_CRUD();
         
-        boolean credencialesValidas = usuario.verificar_inicio_sesion(correo, correo);
+        boolean credencialesValidas = usuario.verificar_inicio_sesion(cor, con, depa);
         
         if (credencialesValidas) {            
-            int idUsuario = usuario.obtenerIdUsuario(correo);
+            int idUsuario = usuario.obtenerIdUsuario(cor);
             
             if (idUsuario > 0) {                
                 
-                //Menu_principal menu = new Menu_principal( idUsuario);
-                //menu.setVisible(true);
-                this.dispose();
+                /*Menu_principal menu = new Menu_principal( idUsuario);
+                menu.setVisible(true);
+                this.dispose();*/
                 } else {
                     JOptionPane.showMessageDialog(this,"Error al obtener ID de usuario","Error",JOptionPane.ERROR_MESSAGE);
                 }
@@ -191,7 +184,14 @@ public class Form_inicio_sesion extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(this, "Error al conectar con la base de datos: " + e.getMessage(),"Error",JOptionPane.ERROR_MESSAGE);
         }        
     }
-    
+    }//GEN-LAST:event_btn_form_iniciar_sesionMouseClicked
+
+    private void btn_form_registroMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_form_registroMouseClicked
+        Form_registrar_usuario menu = new Form_registrar_usuario();
+        menu.setVisible(true);
+       // this.dispose();
+    }//GEN-LAST:event_btn_form_registroMouseClicked
+        
     public static void main(String args[]) {
         
         java.awt.EventQueue.invokeLater(new Runnable() {
@@ -202,19 +202,21 @@ public class Form_inicio_sesion extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JPanel btn_iniciar_sesion;
+    private javax.swing.JPanel btn_form_iniciar_sesion;
+    private javax.swing.JPanel btn_form_registro;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel5;
     private javax.swing.JSeparator jSeparator4;
     private javax.swing.JSeparator jSeparator5;
+    private javax.swing.JSeparator jSeparator7;
     private javax.swing.JLabel lb_correo;
-    private javax.swing.JLabel lb_iniciar_sesion;
-    private javax.swing.JLabel lb_olvido_contraseña;
     private javax.swing.JPasswordField txt_contrasenia;
     private javax.swing.JTextField txt_correo;
+    private javax.swing.JTextField txt_departamento;
     // End of variables declaration//GEN-END:variables
     }
