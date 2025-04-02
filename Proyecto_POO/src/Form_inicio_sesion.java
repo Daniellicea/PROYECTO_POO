@@ -180,9 +180,9 @@ public class Form_inicio_sesion extends javax.swing.JFrame {
             
             if (idUsuario > 0) {                
                 
-                /*Menu_principal menu = new Menu_principal( idUsuario);
+                Form_menu_opciones menu = new Form_menu_opciones( );
                 menu.setVisible(true);
-                this.dispose();*/
+                this.dispose();
                 } else {
                     JOptionPane.showMessageDialog(this,"Error al obtener ID de usuario","Error",JOptionPane.ERROR_MESSAGE);
                 }
