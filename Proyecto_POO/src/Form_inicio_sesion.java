@@ -152,9 +152,10 @@ public class Form_inicio_sesion extends javax.swing.JFrame {
         String cor = txt_correo.getText();
         String con = new String(txt_contrasenia.getPassword());
         String depa = txt_departamento.getText();
-        if (con.length() >=8){
+        if (!(con.length() <8)){
             JOptionPane.showMessageDialog(this, "La contraseña debe ser de 8 caracteres","Error", JOptionPane.ERROR_MESSAGE);
-        }
+        } 
+
         if (!cor.matches("^[\\w-.]+@([\\w-]+\\.)+[\\w-]{2,4}$")) {
             JOptionPane.showMessageDialog(this, "Formato de correo electrónico inválido","Error", JOptionPane.ERROR_MESSAGE);
             return;
