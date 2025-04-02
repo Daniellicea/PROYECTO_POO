@@ -8,7 +8,7 @@ public class Form_inicio_sesion extends javax.swing.JFrame {
     public Form_inicio_sesion() {
         initComponents();
         this.setResizable(false);
-       // this.setLocationRelativeTo(this);
+        this.setLocationRelativeTo(this);
         //this.setIconImage(img.getImage());
     }
 
@@ -30,8 +30,8 @@ public class Form_inicio_sesion extends javax.swing.JFrame {
         jLabel4 = new javax.swing.JLabel();
         jSeparator7 = new javax.swing.JSeparator();
         btn_form_iniciar_sesion = new javax.swing.JPanel();
-        btn_form_registro = new javax.swing.JPanel();
         txt_contrasenia = new javax.swing.JPasswordField();
+        btn_form_iniciar_sesion1 = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -103,29 +103,29 @@ public class Form_inicio_sesion extends javax.swing.JFrame {
 
         jPanel5.add(btn_form_iniciar_sesion, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 290, -1, 30));
 
-        btn_form_registro.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                btn_form_registroMouseClicked(evt);
-            }
-        });
-
-        javax.swing.GroupLayout btn_form_registroLayout = new javax.swing.GroupLayout(btn_form_registro);
-        btn_form_registro.setLayout(btn_form_registroLayout);
-        btn_form_registroLayout.setHorizontalGroup(
-            btn_form_registroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 100, Short.MAX_VALUE)
-        );
-        btn_form_registroLayout.setVerticalGroup(
-            btn_form_registroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 30, Short.MAX_VALUE)
-        );
-
-        jPanel5.add(btn_form_registro, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 290, -1, -1));
-
         txt_contrasenia.setBackground(new java.awt.Color(80, 80, 80));
         txt_contrasenia.setText("txt_contrasenia");
         txt_contrasenia.setBorder(null);
         jPanel5.add(txt_contrasenia, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 190, 170, 20));
+
+        btn_form_iniciar_sesion1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btn_form_iniciar_sesion1MouseClicked(evt);
+            }
+        });
+
+        javax.swing.GroupLayout btn_form_iniciar_sesion1Layout = new javax.swing.GroupLayout(btn_form_iniciar_sesion1);
+        btn_form_iniciar_sesion1.setLayout(btn_form_iniciar_sesion1Layout);
+        btn_form_iniciar_sesion1Layout.setHorizontalGroup(
+            btn_form_iniciar_sesion1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 100, Short.MAX_VALUE)
+        );
+        btn_form_iniciar_sesion1Layout.setVerticalGroup(
+            btn_form_iniciar_sesion1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 30, Short.MAX_VALUE)
+        );
+
+        jPanel5.add(btn_form_iniciar_sesion1, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 290, -1, -1));
 
         jPanel4.add(jPanel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 40, 340, 350));
 
@@ -183,27 +183,25 @@ public class Form_inicio_sesion extends javax.swing.JFrame {
     } catch (Exception e) {
             JOptionPane.showMessageDialog(this, "Error al conectar con la base de datos: " + e.getMessage(),"Error",JOptionPane.ERROR_MESSAGE);
         }        
-    }
-    }//GEN-LAST:event_btn_form_iniciar_sesionMouseClicked
-
-    private void btn_form_registroMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_form_registroMouseClicked
-        Form_registrar_usuario menu = new Form_registrar_usuario();
-        menu.setVisible(true);
-       // this.dispose();
-    }//GEN-LAST:event_btn_form_registroMouseClicked
+    }                                                   
         
-    public static void main(String args[]) {
-        
+    public static void main(String args[]) {      
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new Form_inicio_sesion().setVisible(true);
             }
         });
-    }
+    }//GEN-LAST:event_btn_form_iniciar_sesionMouseClicked
 
+    private void btn_form_iniciar_sesion1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_form_iniciar_sesion1MouseClicked
+        Form_registrar_usuario menu = new Form_registrar_usuario();
+        menu.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_btn_form_iniciar_sesion1MouseClicked
+        
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel btn_form_iniciar_sesion;
-    private javax.swing.JPanel btn_form_registro;
+    private javax.swing.JPanel btn_form_iniciar_sesion1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -219,4 +217,5 @@ public class Form_inicio_sesion extends javax.swing.JFrame {
     private javax.swing.JTextField txt_correo;
     private javax.swing.JTextField txt_departamento;
     // End of variables declaration//GEN-END:variables
-    }
+    
+}

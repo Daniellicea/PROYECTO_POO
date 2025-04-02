@@ -254,11 +254,11 @@ public class Form_registrar_usuario extends javax.swing.JFrame {
     }//GEN-LAST:event_btn_registrar_usuarioMouseClicked
 
     private void lb_iniciar_sesionMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lb_iniciar_sesionMouseClicked
-        Form_inicio_sesion nuevoFormulario = new Form_inicio_sesion();
+        //Form_inicio_sesion nuevoFormulario = new Form_inicio_sesion();
 
-        nuevoFormulario.setVisible(true);
+        //nuevoFormulario.setVisible(true);
 
-        this.dispose();
+        //this.dispose();
     }//GEN-LAST:event_lb_iniciar_sesionMouseClicked
 
     
