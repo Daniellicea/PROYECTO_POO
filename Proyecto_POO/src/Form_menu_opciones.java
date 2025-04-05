@@ -1,12 +1,23 @@
 
 public class Form_menu_opciones extends javax.swing.JFrame {
 
-   
+    
     public Form_menu_opciones() {
         initComponents();
+        
     }
 
-    
+    private int idUsuario;
+    public Form_menu_opciones(int idUsuario) {
+            initComponents();
+            this.idUsuario = idUsuario;
+
+
+            String nombre = new USER_CRUD().obtenerNombreUsuario(idUsuario);
+            txt_nombre.setText(nombre);
+    }
+ 
+
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -14,6 +25,7 @@ public class Form_menu_opciones extends javax.swing.JFrame {
         jPanel4 = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
+        txt_nombre = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
         btn_administrar_usuarios = new javax.swing.JLabel();
         jPanel5 = new javax.swing.JPanel();
@@ -32,15 +44,23 @@ public class Form_menu_opciones extends javax.swing.JFrame {
 
         jPanel1.setBackground(new java.awt.Color(80, 80, 80));
 
+        txt_nombre.setText("jLabel2");
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 530, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addContainerGap(291, Short.MAX_VALUE)
+                .addComponent(txt_nombre)
+                .addGap(202, 202, 202))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 70, Short.MAX_VALUE)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(23, 23, 23)
+                .addComponent(txt_nombre)
+                .addContainerGap(31, Short.MAX_VALUE))
         );
 
         jPanel4.add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(-20, 0, 530, 70));
@@ -168,7 +188,7 @@ public class Form_menu_opciones extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btn_administrar_usuariosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_administrar_usuariosMouseClicked
-        Form_administrar_usuarios menu = new Form_administrar_usuarios( );
+        Form_administrar_usuarios menu = new Form_administrar_usuarios(this.idUsuario);
         menu.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_btn_administrar_usuariosMouseClicked
@@ -194,5 +214,6 @@ public class Form_menu_opciones extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel5;
     private javax.swing.JPanel jPanel6;
+    private javax.swing.JLabel txt_nombre;
     // End of variables declaration//GEN-END:variables
 }

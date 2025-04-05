@@ -180,7 +180,7 @@ public class Form_inicio_sesion extends javax.swing.JFrame {
             
             if (idUsuario > 0) {                
                 
-                Form_menu_opciones menu = new Form_menu_opciones( );
+                Form_menu_opciones menu = new Form_menu_opciones( idUsuario);
                 menu.setVisible(true);
                 this.dispose();
                 } else {
