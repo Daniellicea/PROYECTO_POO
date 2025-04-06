@@ -282,7 +282,7 @@ public class Form_registrar_articulos extends javax.swing.JFrame {
         String estado = txtEstado.getText().trim();
         
         // Crear instancia del CRUD y guardar el artículo
-        ARTICULO_CRUD articuloCrud = new ARTICULO_CRUD();
+        USER_CRUD articuloCrud = new USER_CRUD();
         boolean resultado = articuloCrud.insertarArticulo(nombre, descripcion, precio, stock, estado);
         
         if(resultado) {

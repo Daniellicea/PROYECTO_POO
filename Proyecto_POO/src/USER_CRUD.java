@@ -140,4 +140,81 @@ public boolean verificar_inicio_sesion(String correo, String contra, String depa
         }
         return null;
     }
+    ///////////////////////////////////////////////
+    public boolean insertarArticulo(String nombre, String descripcion, double precio, int stock, String estado) {
+        String insertSQL = "INSERT INTO articulos(nombre, descripcion, precio, stock, estado) VALUES (?,?,?,?,?)";
+        
+        try {
+            PreparedStatement ps = conexion.prepareStatement(insertSQL);
+            ps.setString(1, nombre);
+            ps.setString(2, descripcion);
+            ps.setDouble(3, precio);
+            ps.setInt(4, stock);
+            ps.setString(5, estado);
+            
+            return ps.executeUpdate() > 0;
+        } catch(SQLException e) {
+            System.out.println("Error al insertar artículo: " + e.getMessage());
+            return false;
+        }
+    }
+    
+    public boolean actualizarArticulo(int idArticulo, String nombre, String descripcion, double precio, int stock, String estado) {
+        String actualizarSQL = "UPDATE articulos SET nombre = ?, descripcion = ?, precio = ?, stock = ?, estado = ? WHERE id_articulo = ?";
+        
+        try {
+            PreparedStatement ps = conexion.prepareStatement(actualizarSQL);
+            ps.setString(1, nombre);
+            ps.setString(2, descripcion);
+            ps.setDouble(3, precio);
+            ps.setInt(4, stock);
+            ps.setString(5, estado);
+            ps.setInt(6, idArticulo);
+            
+            return ps.executeUpdate() > 0;
+        } catch(SQLException e) {
+            System.out.println("Error al actualizar artículo: " + e.getMessage());
+            return false;
+        }
+    }
+   
+    public boolean eliminarArticulo(int idArticulo) {
+        String eliminarSQL = "DELETE FROM articulos WHERE id_articulo = ?";
+        
+        try {
+            PreparedStatement ps = conexion.prepareStatement(eliminarSQL);
+            ps.setInt(1, idArticulo);
+            
+            return ps.executeUpdate() > 0;
+        } catch(SQLException e) {
+            System.out.println("Error al eliminar artículo: " + e.getMessage());
+            return false;
+        }
+    }
+    
+    public ResultSet buscarPorId(int idArticulo) {
+        String buscarSQL = "SELECT * FROM articulos WHERE id_articulo = ?";
+        
+        try {
+            PreparedStatement ps = conexion.prepareStatement(buscarSQL);
+            ps.setInt(1, idArticulo);
+            
+            return ps.executeQuery();
+        } catch(SQLException e) {
+            System.out.println("Error al buscar artículo: " + e.getMessage());
+            return null;
+        }
+    }
+    
+    public ResultSet obtenerTodosArticulos() {
+        String consultaSQL = "SELECT * FROM articulos";
+        
+        try {
+            PreparedStatement ps = conexion.prepareStatement(consultaSQL);
+            return ps.executeQuery();
+        } catch(SQLException e) {
+            System.out.println("Error al obtener artículos: " + e.getMessage());
+            return null;
+        }
+    }
 }
