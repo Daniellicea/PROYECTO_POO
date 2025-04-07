@@ -125,96 +125,78 @@ public boolean verificar_inicio_sesion(String correo, String contra, String depa
     return "";
 }
     
+    public ResultSet obtenerTodosUsuarios() throws SQLException {
+        String sql = "SELECT id_usuario, nombre, apellidos, correo, departamento FROM usuarios";
+        PreparedStatement ps = conexion.prepareStatement(sql);
+        return ps.executeQuery();
+    }
+    
+    public ResultSet buscar_por_Id(int id) throws SQLException {
+        String sql = "SELECT id_usuario, nombre, apellidos, correo, departamento FROM usuarios WHERE id_usuario = ?";
+        PreparedStatement ps = conexion.prepareStatement(sql);
+        ps.setInt(1, id);
+        return ps.executeQuery();
+    }
+
     public String cargarDatosUsuario(int idUsuario) {
-        String sql = "SELECT nombre, apellidos, correo, contrasenia FROM usuarios WHERE id_usuario = ?";
+    String sql = "SELECT nombre, apellidos, correo, contrasenia, departamento FROM usuarios WHERE id_usuario = ?";
 
-        try (PreparedStatement ps = conexion.prepareStatement(sql)) {
-            ps.setInt(1, idUsuario);
-            ResultSet rs = ps.executeQuery();
+    try (PreparedStatement ps = conexion.prepareStatement(sql)) {
+        ps.setInt(1, idUsuario);
+        ResultSet rs = ps.executeQuery();
 
-            if (rs.next()) {
-                return rs.getString("nombre") + "|||" + rs.getString("apellidos") + "|||" + rs.getString("correo") + "|||" + rs.getString("contrasenia");
-            }
-        } catch (SQLException e) {
-            System.out.println("Error al cargar datos: " + e.getMessage());
+        if (rs.next()) {
+            return rs.getString("nombre") + "|||" + 
+                   rs.getString("apellidos") + "|||" + 
+                   rs.getString("correo") + "|||" + 
+                   rs.getString("contrasenia") + "|||" +
+                   rs.getString("departamento");
         }
-        return null;
+    } catch (SQLException e) {
+        System.out.println("Error al cargar datos: " + e.getMessage());
     }
-    ///////////////////////////////////////////////
-    public boolean insertarArticulo(String nombre, String descripcion, double precio, int stock, String estado) {
-        String insertSQL = "INSERT INTO articulos(nombre, descripcion, precio, stock, estado) VALUES (?,?,?,?,?)";
-        
-        try {
-            PreparedStatement ps = conexion.prepareStatement(insertSQL);
-            ps.setString(1, nombre);
-            ps.setString(2, descripcion);
-            ps.setDouble(3, precio);
-            ps.setInt(4, stock);
-            ps.setString(5, estado);
-            
-            return ps.executeUpdate() > 0;
-        } catch(SQLException e) {
-            System.out.println("Error al insertar artículo: " + e.getMessage());
-            return false;
-        }
-    }
-    
-    public boolean actualizarArticulo(int idArticulo, String nombre, String descripcion, double precio, int stock, String estado) {
-        String actualizarSQL = "UPDATE articulos SET nombre = ?, descripcion = ?, precio = ?, stock = ?, estado = ? WHERE id_articulo = ?";
-        
-        try {
-            PreparedStatement ps = conexion.prepareStatement(actualizarSQL);
-            ps.setString(1, nombre);
-            ps.setString(2, descripcion);
-            ps.setDouble(3, precio);
-            ps.setInt(4, stock);
-            ps.setString(5, estado);
-            ps.setInt(6, idArticulo);
-            
-            return ps.executeUpdate() > 0;
-        } catch(SQLException e) {
-            System.out.println("Error al actualizar artículo: " + e.getMessage());
-            return false;
-        }
-    }
-   
-    public boolean eliminarArticulo(int idArticulo) {
-        String eliminarSQL = "DELETE FROM articulos WHERE id_articulo = ?";
-        
-        try {
-            PreparedStatement ps = conexion.prepareStatement(eliminarSQL);
-            ps.setInt(1, idArticulo);
-            
-            return ps.executeUpdate() > 0;
-        } catch(SQLException e) {
-            System.out.println("Error al eliminar artículo: " + e.getMessage());
-            return false;
-        }
-    }
-    
-    public ResultSet buscarPorId(int idArticulo) {
-        String buscarSQL = "SELECT * FROM articulos WHERE id_articulo = ?";
-        
-        try {
-            PreparedStatement ps = conexion.prepareStatement(buscarSQL);
-            ps.setInt(1, idArticulo);
-            
-            return ps.executeQuery();
-        } catch(SQLException e) {
-            System.out.println("Error al buscar artículo: " + e.getMessage());
-            return null;
-        }
-    }
-    
-    public ResultSet obtenerTodosArticulos() {
-        String consultaSQL = "SELECT * FROM articulos";
-        
-        try {
-            PreparedStatement ps = conexion.prepareStatement(consultaSQL);
-            return ps.executeQuery();
-        } catch(SQLException e) {
-            System.out.println("Error al obtener artículos: " + e.getMessage());
-            return null;
-        }
+    return null;
+}
+
+public boolean actualizar_datos(int idUsuario, String nombre, String apellidos, 
+                              String correo, String contra, String departamento) {
+    String actualizar = "UPDATE usuarios SET nombre = ?, apellidos = ?, correo = ?, "
+                      + "contrasenia = ?, departamento = ? WHERE id_usuario = ?";
+    try {
+        PreparedStatement ps = conexion.prepareStatement(actualizar);
+        ps.setString(1, nombre);
+        ps.setString(2, apellidos);
+        ps.setString(3, correo);
+        ps.setString(4, contra);
+        ps.setString(5, departamento);
+        ps.setInt(6, idUsuario);
+        return ps.executeUpdate() > 0;
+    } catch (SQLException e) {
+        System.out.println("Error al actualizar al usuario " + e.getMessage());
+        return false;
     }
 }
+    
+    public boolean eliminarUsuario(int id) throws SQLException {
+        String sql = "DELETE FROM usuarios WHERE id_usuario = ?";
+        PreparedStatement ps = conexion.prepareStatement(sql);
+        ps.setInt(1, id);
+        int rowsAffected = ps.executeUpdate();
+        conexion.close();
+        return rowsAffected > 0;
+    }
+    
+   
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+}
+

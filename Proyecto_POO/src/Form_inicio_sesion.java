@@ -32,7 +32,7 @@ public class Form_inicio_sesion extends javax.swing.JFrame {
         btn_form_iniciar_sesion = new javax.swing.JPanel();
         jLabel6 = new javax.swing.JLabel();
         txt_contrasenia = new javax.swing.JPasswordField();
-        btn_form_iniciar_sesion1 = new javax.swing.JPanel();
+        btn_form_registro = new javax.swing.JPanel();
         jLabel7 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -68,6 +68,7 @@ public class Form_inicio_sesion extends javax.swing.JFrame {
         jPanel5.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 230, -1, -1));
 
         txt_departamento.setBackground(new java.awt.Color(80, 80, 80));
+        txt_departamento.setForeground(new java.awt.Color(255, 255, 255));
         txt_departamento.setBorder(null);
         txt_departamento.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -77,6 +78,7 @@ public class Form_inicio_sesion extends javax.swing.JFrame {
         jPanel5.add(txt_departamento, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 250, 170, 20));
 
         txt_correo.setBackground(new java.awt.Color(80, 80, 80));
+        txt_correo.setForeground(new java.awt.Color(255, 255, 255));
         txt_correo.setBorder(null);
         jPanel5.add(txt_correo, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 140, 170, 20));
 
@@ -86,12 +88,17 @@ public class Form_inicio_sesion extends javax.swing.JFrame {
         jPanel5.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 177, -1, 10));
         jPanel5.add(jSeparator7, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 270, 170, -1));
 
+        btn_form_iniciar_sesion.setBackground(new java.awt.Color(36, 36, 36));
         btn_form_iniciar_sesion.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 btn_form_iniciar_sesionMouseClicked(evt);
             }
         });
 
+        jLabel6.setBackground(new java.awt.Color(36, 36, 36));
+        jLabel6.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        jLabel6.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel6.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel6.setText("Ingresar");
 
         javax.swing.GroupLayout btn_form_iniciar_sesionLayout = new javax.swing.GroupLayout(btn_form_iniciar_sesion);
@@ -108,31 +115,36 @@ public class Form_inicio_sesion extends javax.swing.JFrame {
         jPanel5.add(btn_form_iniciar_sesion, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 290, -1, 30));
 
         txt_contrasenia.setBackground(new java.awt.Color(80, 80, 80));
+        txt_contrasenia.setForeground(new java.awt.Color(255, 255, 255));
         txt_contrasenia.setBorder(null);
         jPanel5.add(txt_contrasenia, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 190, 170, 20));
 
-        btn_form_iniciar_sesion1.addMouseListener(new java.awt.event.MouseAdapter() {
+        btn_form_registro.setBackground(new java.awt.Color(36, 36, 36));
+        btn_form_registro.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                btn_form_iniciar_sesion1MouseClicked(evt);
+                btn_form_registroMouseClicked(evt);
             }
         });
 
+        jLabel7.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        jLabel7.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel7.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel7.setText("Registrar usuario");
 
-        javax.swing.GroupLayout btn_form_iniciar_sesion1Layout = new javax.swing.GroupLayout(btn_form_iniciar_sesion1);
-        btn_form_iniciar_sesion1.setLayout(btn_form_iniciar_sesion1Layout);
-        btn_form_iniciar_sesion1Layout.setHorizontalGroup(
-            btn_form_iniciar_sesion1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel7, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 100, Short.MAX_VALUE)
+        javax.swing.GroupLayout btn_form_registroLayout = new javax.swing.GroupLayout(btn_form_registro);
+        btn_form_registro.setLayout(btn_form_registroLayout);
+        btn_form_registroLayout.setHorizontalGroup(
+            btn_form_registroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jLabel7, javax.swing.GroupLayout.DEFAULT_SIZE, 115, Short.MAX_VALUE)
         );
-        btn_form_iniciar_sesion1Layout.setVerticalGroup(
-            btn_form_iniciar_sesion1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(btn_form_iniciar_sesion1Layout.createSequentialGroup()
+        btn_form_registroLayout.setVerticalGroup(
+            btn_form_registroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(btn_form_registroLayout.createSequentialGroup()
                 .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, Short.MAX_VALUE))
         );
 
-        jPanel5.add(btn_form_iniciar_sesion1, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 290, -1, -1));
+        jPanel5.add(btn_form_registro, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 290, -1, -1));
 
         jPanel4.add(jPanel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 40, 340, 350));
 
@@ -158,40 +170,46 @@ public class Form_inicio_sesion extends javax.swing.JFrame {
 
     private void btn_form_iniciar_sesionMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_form_iniciar_sesionMouseClicked
         String cor = txt_correo.getText();
-        String con = new String(txt_contrasenia.getPassword());
-        String depa = txt_departamento.getText();
-        
-
-        if (!cor.matches("^[\\w-.]+@([\\w-]+\\.)+[\\w-]{2,4}$")) {
-            JOptionPane.showMessageDialog(this, "Formato de correo electrónico inválido","Error", JOptionPane.ERROR_MESSAGE);
-            return;
-        }
-        if (cor.isEmpty() || con.isEmpty() || depa.isEmpty()){
-            JOptionPane.showMessageDialog(this,"Todos los campos son obligatorios","Error",JOptionPane.ERROR_MESSAGE );
-            return ;       
-        }
-        try {        
+    String con = new String(txt_contrasenia.getPassword());
+    String depa = txt_departamento.getText();
+    
+    if (!cor.matches("^[\\w-.]+@([\\w-]+\\.)+[\\w-]{2,4}$")) {
+        JOptionPane.showMessageDialog(this, "Formato de correo electrónico inválido","Error", JOptionPane.ERROR_MESSAGE);
+        return;
+    }
+    if (cor.isEmpty() || con.isEmpty() || depa.isEmpty()){
+        JOptionPane.showMessageDialog(this,"Todos los campos son obligatorios","Error",JOptionPane.ERROR_MESSAGE );
+        return;       
+    }
+    
+    try {        
         USER_CRUD usuario = new USER_CRUD();
-        
         boolean credencialesValidas = usuario.verificar_inicio_sesion(cor, con, depa);
         
         if (credencialesValidas) {            
             int idUsuario = usuario.obtenerIdUsuario(cor);
             
-            if (idUsuario > 0) {                
-                
-                Form_menu_opciones menu = new Form_menu_opciones( idUsuario);
-                menu.setVisible(true);
+            if (idUsuario > 0) {
+                // Redirección según departamento
+                if (depa.equalsIgnoreCase("Administrativo")) {
+                    // Abrir formulario de administración de artículos
+                    Form_menu_opciones menuArticulos = new Form_menu_opciones(idUsuario);
+                    menuArticulos.setVisible(true);
+                } else if (depa.equalsIgnoreCase("Usuario")) {
+                    // Abrir formulario de compra de artículos
+                    Form_comprar_articulos comprarArticulos = new Form_comprar_articulos(idUsuario);
+                    comprarArticulos.setVisible(true);
+                } 
                 this.dispose();
-                } else {
-                    JOptionPane.showMessageDialog(this,"Error al obtener ID de usuario","Error",JOptionPane.ERROR_MESSAGE);
-                }
+            } else {
+                JOptionPane.showMessageDialog(this,"Error al obtener ID de usuario","Error",JOptionPane.ERROR_MESSAGE);
+            }
         } else {
-            JOptionPane.showMessageDialog(this, "Correo o contraseña incorrectos", "Error", JOptionPane.ERROR_MESSAGE);
+            JOptionPane.showMessageDialog(this, "Correo, contraseña o departamento incorrectos", "Error", JOptionPane.ERROR_MESSAGE);
         }
     } catch (Exception e) {
-            JOptionPane.showMessageDialog(this, "Error al conectar con la base de datos: " + e.getMessage(),"Error",JOptionPane.ERROR_MESSAGE);
-        }        
+        JOptionPane.showMessageDialog(this, "Error al conectar con la base de datos: " + e.getMessage(),"Error",JOptionPane.ERROR_MESSAGE);
+    }        
     }                                                   
         
     public static void main(String args[]) {      
@@ -202,15 +220,15 @@ public class Form_inicio_sesion extends javax.swing.JFrame {
         });
     }//GEN-LAST:event_btn_form_iniciar_sesionMouseClicked
 
-    private void btn_form_iniciar_sesion1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_form_iniciar_sesion1MouseClicked
+    private void btn_form_registroMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_form_registroMouseClicked
         Form_registrar_usuario menu = new Form_registrar_usuario();
         menu.setVisible(true);
         this.dispose();
-    }//GEN-LAST:event_btn_form_iniciar_sesion1MouseClicked
+    }//GEN-LAST:event_btn_form_registroMouseClicked
         
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel btn_form_iniciar_sesion;
-    private javax.swing.JPanel btn_form_iniciar_sesion1;
+    private javax.swing.JPanel btn_form_registro;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;

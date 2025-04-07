@@ -1,12 +1,4 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
- */
 
-/**
- *
- * @author Emiliano
- */
 
 import javax.swing.table.DefaultTableModel;
 import java.sql.PreparedStatement;
@@ -15,9 +7,7 @@ import java.sql.ResultSet;
 import javax.swing.JOptionPane;
 public class Administrar_articulo extends javax.swing.JFrame {
 
-    /**
-     * Creates new form Administrar_articulo
-     */
+  
     public Administrar_articulo() {
         initComponents();
     }
@@ -50,7 +40,8 @@ public class Administrar_articulo extends javax.swing.JFrame {
         jLabel1.setBackground(new java.awt.Color(255, 255, 255));
         jLabel1.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel1.setText("Administrador de Artículos");
+        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel1.setText("Administrar Artículos");
 
         jPanel2.setBackground(new java.awt.Color(80, 80, 80));
 
@@ -148,14 +139,11 @@ public class Administrar_articulo extends javax.swing.JFrame {
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jLabel1)
-                .addGap(135, 135, 135))
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(23, 23, 23)
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(31, Short.MAX_VALUE))
+            .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -182,43 +170,43 @@ public class Administrar_articulo extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnAgregarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAgregarActionPerformed
-          Form_registrar_articulos registrarArticulosForm = new Form_registrar_articulos();
-    registrarArticulosForm.setVisible(true);
-    this.dispose();
+        Form_registrar_articulos registrarArticulosForm = new Form_registrar_articulos();
+        registrarArticulosForm.setVisible(true);
+        this.dispose();
     }//GEN-LAST:event_btnAgregarActionPerformed
 
     private void btnActualizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnActualizarActionPerformed
-            int selectedRow = tablaArticulos.getSelectedRow();
-    if (selectedRow == -1) {
-        javax.swing.JOptionPane.showMessageDialog(this, 
-            "Por favor, seleccione un artículo para actualizar.", 
-            "Selección requerida", 
-            javax.swing.JOptionPane.WARNING_MESSAGE);
-        return;
-    }
+        int selectedRow = tablaArticulos.getSelectedRow();
+        if (selectedRow == -1) {
+            javax.swing.JOptionPane.showMessageDialog(this, 
+                "Por favor, seleccione un artículo para actualizar.", 
+                "Selección requerida", 
+                javax.swing.JOptionPane.WARNING_MESSAGE);
+            return;
+        }
 
-    int id = (int) tablaArticulos.getValueAt(selectedRow, 0);
-    String nombre = (String) tablaArticulos.getValueAt(selectedRow, 1);
-    int stock = (int) tablaArticulos.getValueAt(selectedRow, 4);
+        int id = (int) tablaArticulos.getValueAt(selectedRow, 0);
+        String nombre = (String) tablaArticulos.getValueAt(selectedRow, 1);
+        int stock = (int) tablaArticulos.getValueAt(selectedRow, 4);
 
-    Actualizar_stock actualizarStockForm = new Actualizar_stock();
-    actualizarStockForm.setVisible(true);
+        Actualizar_stock actualizarStockForm = new Actualizar_stock();
+        actualizarStockForm.setVisible(true);
 
-    // Llenar los campos del formulario Actualizar_stock
-    actualizarStockForm.txtId.setText(String.valueOf(id));
-    actualizarStockForm.txtNombre.setText(nombre);
-    actualizarStockForm.txtStock.setText(String.valueOf(stock));
+        // Llenar los campos del formulario Actualizar_stock
+        actualizarStockForm.txtId.setText(String.valueOf(id));
+        actualizarStockForm.txtNombre.setText(nombre);
+        actualizarStockForm.txtStock.setText(String.valueOf(stock));
     }//GEN-LAST:event_btnActualizarActionPerformed
 
     private void btnEliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminarActionPerformed
             int selectedRow = tablaArticulos.getSelectedRow();
-    if (selectedRow == -1) {
-        javax.swing.JOptionPane.showMessageDialog(this, 
-            "Por favor, seleccione un artículo para eliminar.", 
-            "Selección requerida", 
-            javax.swing.JOptionPane.WARNING_MESSAGE);
-        return;
-    }
+        if (selectedRow == -1) {
+            javax.swing.JOptionPane.showMessageDialog(this, 
+                "Por favor, seleccione un artículo para eliminar.", 
+                "Selección requerida", 
+                javax.swing.JOptionPane.WARNING_MESSAGE);
+            return;
+        }
 
     int confirm = javax.swing.JOptionPane.showConfirmDialog(this, 
         "¿Está seguro de que desea eliminar este artículo?", 
@@ -229,7 +217,7 @@ public class Administrar_articulo extends javax.swing.JFrame {
         int id = (int) tablaArticulos.getValueAt(selectedRow, 0);
 
         try {
-            USER_CRUD crud = new USER_CRUD();
+            ARTICULOS_CRUD crud = new ARTICULOS_CRUD();
             boolean eliminado = crud.eliminarArticulo(id);
 
             if (eliminado) {
@@ -265,7 +253,7 @@ public class Administrar_articulo extends javax.swing.JFrame {
 
     try {
         int id = Integer.parseInt(idTexto);
-        USER_CRUD crud = new USER_CRUD();
+        ARTICULOS_CRUD crud = new ARTICULOS_CRUD();
         ResultSet rs = crud.buscarPorId(id);
 
         DefaultTableModel model = (DefaultTableModel) tablaArticulos.getModel();
@@ -301,7 +289,7 @@ public class Administrar_articulo extends javax.swing.JFrame {
 
     private void btnMostrar_todosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMostrar_todosActionPerformed
             try {
-        USER_CRUD crud = new USER_CRUD();
+        ARTICULOS_CRUD crud = new ARTICULOS_CRUD();
         ResultSet rs = crud.obtenerTodosArticulos();
 
         DefaultTableModel model = (DefaultTableModel) tablaArticulos.getModel();

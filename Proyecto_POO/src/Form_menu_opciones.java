@@ -26,13 +26,14 @@ public class Form_menu_opciones extends javax.swing.JFrame {
         jLabel3 = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
         txt_nombre = new javax.swing.JLabel();
-        jPanel2 = new javax.swing.JPanel();
-        btn_administrar_usuarios = new javax.swing.JLabel();
-        jPanel5 = new javax.swing.JPanel();
+        jLabel2 = new javax.swing.JLabel();
+        btn_administrar_usuarios = new javax.swing.JPanel();
+        ll = new javax.swing.JLabel();
+        btn_comprar_articulos = new javax.swing.JPanel();
         jLabel5 = new javax.swing.JLabel();
-        jPanel3 = new javax.swing.JPanel();
+        btn_administrar_articulos = new javax.swing.JPanel();
         jLabel4 = new javax.swing.JLabel();
-        jPanel6 = new javax.swing.JPanel();
+        btn_reporte_ventas = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -44,34 +45,37 @@ public class Form_menu_opciones extends javax.swing.JFrame {
 
         jPanel1.setBackground(new java.awt.Color(80, 80, 80));
 
-        txt_nombre.setText("jLabel2");
+        txt_nombre.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        txt_nombre.setForeground(new java.awt.Color(255, 255, 255));
+
+        jLabel2.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel2.setText("USUARIO:");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap(291, Short.MAX_VALUE)
-                .addComponent(txt_nombre)
-                .addGap(202, 202, 202))
+                .addContainerGap(116, Short.MAX_VALUE)
+                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 66, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(txt_nombre, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(163, 163, 163))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(23, 23, 23)
-                .addComponent(txt_nombre)
-                .addContainerGap(31, Short.MAX_VALUE))
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, 31, Short.MAX_VALUE)
+                    .addComponent(txt_nombre, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(16, Short.MAX_VALUE))
         );
 
-        jPanel4.add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(-20, 0, 530, 70));
+        jPanel4.add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 430, 70));
 
-        jPanel2.setBackground(new java.awt.Color(80, 80, 80));
-        jPanel2.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-
-        btn_administrar_usuarios.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        btn_administrar_usuarios.setForeground(new java.awt.Color(255, 255, 255));
-        btn_administrar_usuarios.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        btn_administrar_usuarios.setText("Administracion de usuarios");
+        btn_administrar_usuarios.setBackground(new java.awt.Color(80, 80, 80));
         btn_administrar_usuarios.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btn_administrar_usuarios.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -79,119 +83,180 @@ public class Form_menu_opciones extends javax.swing.JFrame {
             }
         });
 
-        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
-        jPanel2.setLayout(jPanel2Layout);
-        jPanel2Layout.setHorizontalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(btn_administrar_usuarios, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE))
+        ll.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        ll.setForeground(new java.awt.Color(255, 255, 255));
+        ll.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        ll.setText("Administracion de usuarios");
+        ll.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        ll.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                llMouseClicked(evt);
+            }
+        });
+
+        javax.swing.GroupLayout btn_administrar_usuariosLayout = new javax.swing.GroupLayout(btn_administrar_usuarios);
+        btn_administrar_usuarios.setLayout(btn_administrar_usuariosLayout);
+        btn_administrar_usuariosLayout.setHorizontalGroup(
+            btn_administrar_usuariosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, btn_administrar_usuariosLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(ll, javax.swing.GroupLayout.PREFERRED_SIZE, 159, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(21, 21, 21))
         );
-        jPanel2Layout.setVerticalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+        btn_administrar_usuariosLayout.setVerticalGroup(
+            btn_administrar_usuariosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, btn_administrar_usuariosLayout.createSequentialGroup()
                 .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(btn_administrar_usuarios, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(ll, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
-        jPanel4.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 110, 180, 50));
+        jPanel4.add(btn_administrar_usuarios, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 110, 180, 50));
 
-        jPanel5.setBackground(new java.awt.Color(80, 80, 80));
-        jPanel5.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btn_comprar_articulos.setBackground(new java.awt.Color(80, 80, 80));
+        btn_comprar_articulos.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btn_comprar_articulos.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btn_comprar_articulosMouseClicked(evt);
+            }
+        });
 
         jLabel5.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(255, 255, 255));
         jLabel5.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel5.setText("Administracion de usuarios");
+        jLabel5.setText("Compra de articulos");
 
-        javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
-        jPanel5.setLayout(jPanel5Layout);
-        jPanel5Layout.setHorizontalGroup(
-            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel5Layout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE))
+        javax.swing.GroupLayout btn_comprar_articulosLayout = new javax.swing.GroupLayout(btn_comprar_articulos);
+        btn_comprar_articulos.setLayout(btn_comprar_articulosLayout);
+        btn_comprar_articulosLayout.setHorizontalGroup(
+            btn_comprar_articulosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, btn_comprar_articulosLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(20, 20, 20))
         );
-        jPanel5Layout.setVerticalGroup(
-            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel5Layout.createSequentialGroup()
+        btn_comprar_articulosLayout.setVerticalGroup(
+            btn_comprar_articulosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, btn_comprar_articulosLayout.createSequentialGroup()
                 .addGap(0, 0, Short.MAX_VALUE)
                 .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
-        jPanel4.add(jPanel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 230, -1, -1));
+        jPanel4.add(btn_comprar_articulos, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 230, -1, -1));
 
-        jPanel3.setBackground(new java.awt.Color(80, 80, 80));
-        jPanel3.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btn_administrar_articulos.setBackground(new java.awt.Color(80, 80, 80));
+        btn_administrar_articulos.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btn_administrar_articulos.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btn_administrar_articulosMouseClicked(evt);
+            }
+        });
 
         jLabel4.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(255, 255, 255));
         jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel4.setText("Administracion de usuarios");
+        jLabel4.setText("Administracion de articulos");
 
-        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
-        jPanel3.setLayout(jPanel3Layout);
-        jPanel3Layout.setHorizontalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE))
+        javax.swing.GroupLayout btn_administrar_articulosLayout = new javax.swing.GroupLayout(btn_administrar_articulos);
+        btn_administrar_articulos.setLayout(btn_administrar_articulosLayout);
+        btn_administrar_articulosLayout.setHorizontalGroup(
+            btn_administrar_articulosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, btn_administrar_articulosLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(32, 32, 32))
         );
-        jPanel3Layout.setVerticalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
+        btn_administrar_articulosLayout.setVerticalGroup(
+            btn_administrar_articulosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, btn_administrar_articulosLayout.createSequentialGroup()
                 .addGap(0, 0, Short.MAX_VALUE)
                 .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
-        jPanel4.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 170, -1, -1));
+        jPanel4.add(btn_administrar_articulos, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 170, -1, -1));
 
-        jPanel6.setBackground(new java.awt.Color(80, 80, 80));
-        jPanel6.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btn_reporte_ventas.setBackground(new java.awt.Color(80, 80, 80));
+        btn_reporte_ventas.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btn_reporte_ventas.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btn_reporte_ventasMouseClicked(evt);
+            }
+        });
 
         jLabel1.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel1.setText("Administracion de usuarios");
+        jLabel1.setText("Reportes");
 
-        javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
-        jPanel6.setLayout(jPanel6Layout);
-        jPanel6Layout.setHorizontalGroup(
-            jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel6Layout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE))
+        javax.swing.GroupLayout btn_reporte_ventasLayout = new javax.swing.GroupLayout(btn_reporte_ventas);
+        btn_reporte_ventas.setLayout(btn_reporte_ventasLayout);
+        btn_reporte_ventasLayout.setHorizontalGroup(
+            btn_reporte_ventasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, btn_reporte_ventasLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(25, 25, 25))
         );
-        jPanel6Layout.setVerticalGroup(
-            jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel6Layout.createSequentialGroup()
+        btn_reporte_ventasLayout.setVerticalGroup(
+            btn_reporte_ventasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, btn_reporte_ventasLayout.createSequentialGroup()
                 .addGap(0, 0, Short.MAX_VALUE)
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
-        jPanel4.add(jPanel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 290, -1, -1));
+        jPanel4.add(btn_reporte_ventas, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 290, -1, -1));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, 502, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, 595, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, 421, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+                .addContainerGap()
+                .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, 409, Short.MAX_VALUE)
+                .addContainerGap())
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void btn_administrar_usuariosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_administrar_usuariosMouseClicked
+    private void llMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_llMouseClicked
         Form_administrar_usuarios menu = new Form_administrar_usuarios(this.idUsuario);
         menu.setVisible(true);
         this.dispose();
+    }//GEN-LAST:event_llMouseClicked
+
+    private void btn_administrar_usuariosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_administrar_usuariosMouseClicked
+        // TODO add your handling code here:
+        Form_agregar registrarUsuarioForm = new Form_agregar();
+        registrarUsuarioForm.setVisible(true);
+        this.dispose();
     }//GEN-LAST:event_btn_administrar_usuariosMouseClicked
+
+    private void btn_reporte_ventasMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_reporte_ventasMouseClicked
+        Reporte_ventas Reporte_ventas = new Reporte_ventas();
+        Reporte_ventas.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_btn_reporte_ventasMouseClicked
+
+    private void btn_administrar_articulosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_administrar_articulosMouseClicked
+        // TODO add your handling code here:
+        Administrar_articulo administrar_articulo = new Administrar_articulo();
+        administrar_articulo.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_btn_administrar_articulosMouseClicked
+
+    private void btn_comprar_articulosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_comprar_articulosMouseClicked
+        // TODO add your handling code here:
+        Form_comprar_articulos Form_comprar_articulos = new Form_comprar_articulos();
+        Form_comprar_articulos.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_btn_comprar_articulosMouseClicked
 
     
     public static void main(String args[]) {
@@ -203,17 +268,18 @@ public class Form_menu_opciones extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel btn_administrar_usuarios;
+    private javax.swing.JPanel btn_administrar_articulos;
+    private javax.swing.JPanel btn_administrar_usuarios;
+    private javax.swing.JPanel btn_comprar_articulos;
+    private javax.swing.JPanel btn_reporte_ventas;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel2;
-    private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
-    private javax.swing.JPanel jPanel5;
-    private javax.swing.JPanel jPanel6;
+    private javax.swing.JLabel ll;
     private javax.swing.JLabel txt_nombre;
     // End of variables declaration//GEN-END:variables
 }
