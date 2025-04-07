@@ -75,6 +75,24 @@ public class ARTICULOS_CRUD {
     }
     
 
+        public ResultSet reporteDepartameT(){
+        String slqTodos = "SELECT * FROM vista_pedidos_por_departamento;";
+        
+        try{
+            PreparedStatement ps = conexion.prepareStatement(slqTodos);
+            return ps.executeQuery();
+        }
+        catch(SQLException s){
+            System.out.println("Error al consultar departamentos"+s.getMessage());
+            return null;
+        }
+        
+    }
+    
+    
+    
+    
+    
     
     
     public ResultSet obtenerTodosArticulos() throws SQLException {

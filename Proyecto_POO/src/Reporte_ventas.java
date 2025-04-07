@@ -1,17 +1,25 @@
-
+import com.itextpdf.text.Paragraph;
+import com.itextpdf.text.Font;
+import com.itextpdf.text.FontFactory;
+import com.itextpdf.text.Element;
+import com.itextpdf.text.Document;
+import com.itextpdf.text.DocumentException;
+import com.itextpdf.text.pdf.PdfPTable;
+import com.itextpdf.text.pdf.PdfWriter;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import javax.swing.JOptionPane;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 
 public class Reporte_ventas extends javax.swing.JFrame {
 
     
     public Reporte_ventas() {
         initComponents();
-        addButtonText(btn_reporte_pedidos, "Reporte de Pedidos");
-        addButtonText(btn_reporte_inventario, "Reporte de Inventario");
-        addButtonText(btn_reporte_pedidos_por_fecha, "Pedidos por Fecha");
+        
     }
-    private static final String DB_URL = "jdbc:mysql://localhost:3306/tu_basedatos";
-    private static final String DB_USER = "usuario";
-    private static final String DB_PASS = "contraseña";
+
     
     
     @SuppressWarnings("unchecked")
@@ -23,9 +31,7 @@ public class Reporte_ventas extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         txt_nombre = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
-        btn_reporte_pedidos = new javax.swing.JPanel();
-        btn_reporte_inventario = new javax.swing.JPanel();
-        btn_reporte_pedidos_por_fecha = new javax.swing.JPanel();
+        btn_generar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -67,68 +73,13 @@ public class Reporte_ventas extends javax.swing.JFrame {
 
         jPanel4.add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(-20, 0, 1030, 70));
 
-        btn_reporte_pedidos.setBackground(new java.awt.Color(80, 80, 80));
-        btn_reporte_pedidos.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        btn_reporte_pedidos.addMouseListener(new java.awt.event.MouseAdapter() {
+        btn_generar.setText("jButton1");
+        btn_generar.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                btn_reporte_pedidosMouseClicked(evt);
+                btn_generarMouseClicked(evt);
             }
         });
-
-        javax.swing.GroupLayout btn_reporte_pedidosLayout = new javax.swing.GroupLayout(btn_reporte_pedidos);
-        btn_reporte_pedidos.setLayout(btn_reporte_pedidosLayout);
-        btn_reporte_pedidosLayout.setHorizontalGroup(
-            btn_reporte_pedidosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 186, Short.MAX_VALUE)
-        );
-        btn_reporte_pedidosLayout.setVerticalGroup(
-            btn_reporte_pedidosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 50, Short.MAX_VALUE)
-        );
-
-        jPanel4.add(btn_reporte_pedidos, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 140, -1, -1));
-
-        btn_reporte_inventario.setBackground(new java.awt.Color(80, 80, 80));
-        btn_reporte_inventario.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        btn_reporte_inventario.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                btn_reporte_inventarioMouseClicked(evt);
-            }
-        });
-
-        javax.swing.GroupLayout btn_reporte_inventarioLayout = new javax.swing.GroupLayout(btn_reporte_inventario);
-        btn_reporte_inventario.setLayout(btn_reporte_inventarioLayout);
-        btn_reporte_inventarioLayout.setHorizontalGroup(
-            btn_reporte_inventarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 186, Short.MAX_VALUE)
-        );
-        btn_reporte_inventarioLayout.setVerticalGroup(
-            btn_reporte_inventarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 50, Short.MAX_VALUE)
-        );
-
-        jPanel4.add(btn_reporte_inventario, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 140, -1, -1));
-
-        btn_reporte_pedidos_por_fecha.setBackground(new java.awt.Color(80, 80, 80));
-        btn_reporte_pedidos_por_fecha.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        btn_reporte_pedidos_por_fecha.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                btn_reporte_pedidos_por_fechaMouseClicked(evt);
-            }
-        });
-
-        javax.swing.GroupLayout btn_reporte_pedidos_por_fechaLayout = new javax.swing.GroupLayout(btn_reporte_pedidos_por_fecha);
-        btn_reporte_pedidos_por_fecha.setLayout(btn_reporte_pedidos_por_fechaLayout);
-        btn_reporte_pedidos_por_fechaLayout.setHorizontalGroup(
-            btn_reporte_pedidos_por_fechaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 186, Short.MAX_VALUE)
-        );
-        btn_reporte_pedidos_por_fechaLayout.setVerticalGroup(
-            btn_reporte_pedidos_por_fechaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 50, Short.MAX_VALUE)
-        );
-
-        jPanel4.add(btn_reporte_pedidos_por_fecha, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 140, -1, -1));
+        jPanel4.add(btn_generar, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 190, -1, -1));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -140,52 +91,62 @@ public class Reporte_ventas extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, 391, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void btn_reporte_pedidosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_reporte_pedidosMouseClicked
-       try {
-            generarReportePedidos();
-        } catch (Exception e) {
-            JOptionPane.showMessageDialog(this, "Error al generar el reporte: " + e.getMessage(), 
-                "Error", JOptionPane.ERROR_MESSAGE);
-        }
-    }//GEN-LAST:event_btn_reporte_pedidosMouseClicked
-
-    private void btn_reporte_inventarioMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_reporte_inventarioMouseClicked
+    private void btn_generarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_generarMouseClicked
         // TODO add your handling code here:
-        try {
-            generarReporteInventario();
-        } catch (Exception e) {
-            JOptionPane.showMessageDialog(this, "Error al generar el reporte: " + e.getMessage(), 
-                "Error", JOptionPane.ERROR_MESSAGE);
-        }
-    }//GEN-LAST:event_btn_reporte_inventarioMouseClicked
-
-    private void btn_reporte_pedidos_por_fechaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_reporte_pedidos_por_fechaMouseClicked
-        // TODO add your handling code here:
-        try {
-            // Mostrar diálogo para seleccionar rango de fechas
-            String fechaInicio = JOptionPane.showInputDialog(this, "Fecha de inicio (YYYY-MM-DD):");
-            String fechaFin = JOptionPane.showInputDialog(this, "Fecha de fin (YYYY-MM-DD):");
+        Document documento = new Document();
+        
+        try{
+            String ruta = System.getProperty("user.home");
+            PdfWriter.getInstance(documento, new FileOutputStream(ruta + "/OneDrive/Desktop/Reportes.pdf"));
             
-            if (fechaInicio != null && fechaFin != null && !fechaInicio.isEmpty() && !fechaFin.isEmpty()) {
-                generarReportePedidosPorFecha(fechaInicio, fechaFin);
-            }
-        } catch (Exception e) {
-            JOptionPane.showMessageDialog(this, "Error al generar el reporte: " + e.getMessage(), 
-                "Error", JOptionPane.ERROR_MESSAGE);
-        }
-    }//GEN-LAST:event_btn_reporte_pedidos_por_fechaMouseClicked
-    
-    
-     * @param args the command line arguments
-     */
+           
+                    
+            documento.open();
+            
+            Paragraph titulo = new Paragraph("PEDIDOS POR DEPARTAMENTOS", FontFactory.getFont("Arial", 20, Font.BOLD));
+            titulo.setAlignment(Element.ALIGN_CENTER);
+            documento.add(titulo);
+            documento.add(new Paragraph(" "));
 
-                                 
+            PdfPTable tabla = new PdfPTable(7);
+            tabla.addCell("ID solicitud");
+            tabla.addCell("Usuario");
+            tabla.addCell("Departamento");
+            tabla.addCell("Cantidad");
+            tabla.addCell("Fecha");
+            tabla.addCell("Hora");
+            tabla.addCell("Estado");
+            ARTICULOS_CRUD CRUD = new ARTICULOS_CRUD();
+            
+            ResultSet rs = CRUD.reporteDepartameT();
+            if(rs.next()){
+                do{
+                    tabla.addCell(rs.getString(1));
+                    tabla.addCell(rs.getString(2));
+                    tabla.addCell(rs.getString(3));
+                    tabla.addCell(rs.getString(4));
+                    tabla.addCell(rs.getString(5));
+                    tabla.addCell(rs.getString(6));
+                    tabla.addCell(rs.getString(7));
+                }while(rs.next());
+                documento.add(tabla);
+            }
+            documento.close(); // <- dentro del try
+            JOptionPane.showMessageDialog(this, "Reporte creado");
+        }catch(DocumentException | FileNotFoundException | SQLException e){
+             System.out.println( "Error al generar PDF: " + e.getMessage());
+        }
+        
+    }//GEN-LAST:event_btn_generarMouseClicked
+                    
     /**
      * @param args the command line arguments
      */
@@ -222,9 +183,7 @@ public class Reporte_ventas extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JPanel btn_reporte_inventario;
-    private javax.swing.JPanel btn_reporte_pedidos;
-    private javax.swing.JPanel btn_reporte_pedidos_por_fecha;
+    private javax.swing.JButton btn_generar;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JPanel jPanel1;

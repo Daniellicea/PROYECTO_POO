@@ -46,9 +46,8 @@ public class Form_agregar extends javax.swing.JFrame {
         jSeparator8 = new javax.swing.JSeparator();
         btn_registrar_usuario = new javax.swing.JPanel();
         jLabel7 = new javax.swing.JLabel();
-        jLabel8 = new javax.swing.JLabel();
-        lb_iniciar_sesion = new javax.swing.JLabel();
         txt_departamento = new javax.swing.JComboBox<>();
+        lb_iniciar_sesion = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -163,21 +162,6 @@ public class Form_agregar extends javax.swing.JFrame {
 
         jPanel5.add(btn_registrar_usuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 370, 190, 40));
 
-        jLabel8.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel8.setText("¿Ya tiene un usuario?");
-        jPanel5.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 410, 120, 20));
-
-        lb_iniciar_sesion.setForeground(new java.awt.Color(255, 255, 255));
-        lb_iniciar_sesion.setText("I̲n̲i̲c̲i̲a̲r̲ ̲s̲e̲s̲i̲ó̲n̲");
-        lb_iniciar_sesion.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        lb_iniciar_sesion.setDebugGraphicsOptions(javax.swing.DebugGraphics.NONE_OPTION);
-        lb_iniciar_sesion.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                lb_iniciar_sesionMouseClicked(evt);
-            }
-        });
-        jPanel5.add(lb_iniciar_sesion, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 410, -1, 20));
-
         txt_departamento.setBackground(new java.awt.Color(80, 80, 80));
         txt_departamento.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         txt_departamento.setForeground(new java.awt.Color(255, 255, 255));
@@ -190,6 +174,17 @@ public class Form_agregar extends javax.swing.JFrame {
             }
         });
         jPanel5.add(txt_departamento, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 340, 170, -1));
+
+        lb_iniciar_sesion.setForeground(new java.awt.Color(255, 255, 255));
+        lb_iniciar_sesion.setText("REGRESAR");
+        lb_iniciar_sesion.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        lb_iniciar_sesion.setDebugGraphicsOptions(javax.swing.DebugGraphics.NONE_OPTION);
+        lb_iniciar_sesion.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                lb_iniciar_sesionMouseClicked(evt);
+            }
+        });
+        jPanel5.add(lb_iniciar_sesion, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 410, -1, 20));
 
         jPanel1.add(jPanel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 40, 340, 440));
 
@@ -257,15 +252,15 @@ public class Form_agregar extends javax.swing.JFrame {
 
     }//GEN-LAST:event_btn_registrar_usuarioMouseClicked
 
-    private void lb_iniciar_sesionMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lb_iniciar_sesionMouseClicked
-        Form_inicio_sesion nuevoFormulario = new Form_inicio_sesion();
-        nuevoFormulario.setVisible(true);
-        this.dispose();
-    }//GEN-LAST:event_lb_iniciar_sesionMouseClicked
-
     private void txt_departamentoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txt_departamentoActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txt_departamentoActionPerformed
+
+    private void lb_iniciar_sesionMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lb_iniciar_sesionMouseClicked
+        Form_administrar_usuarios nuevoFormulario = new Form_administrar_usuarios();
+        nuevoFormulario.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_lb_iniciar_sesionMouseClicked
 
     /**
      * @param args the command line arguments
@@ -312,7 +307,6 @@ public class Form_agregar extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
-    private javax.swing.JLabel jLabel8;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel5;
     private javax.swing.JSeparator jSeparator4;
