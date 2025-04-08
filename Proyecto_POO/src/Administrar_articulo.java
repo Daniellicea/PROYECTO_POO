@@ -211,10 +211,7 @@ public class Administrar_articulo extends javax.swing.JFrame {
     private void btnActualizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnActualizarActionPerformed
         int selectedRow = tablaArticulos.getSelectedRow();
         if (selectedRow == -1) {
-            javax.swing.JOptionPane.showMessageDialog(this, 
-                "Por favor, seleccione un artículo para actualizar.", 
-                "Selección requerida", 
-                javax.swing.JOptionPane.WARNING_MESSAGE);
+            javax.swing.JOptionPane.showMessageDialog(this, "Por favor, seleccione un artículo para actualizar.", "Selección requerida", javax.swing.JOptionPane.WARNING_MESSAGE);
             return;
         }
 
@@ -234,17 +231,11 @@ public class Administrar_articulo extends javax.swing.JFrame {
     private void btnEliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminarActionPerformed
             int selectedRow = tablaArticulos.getSelectedRow();
         if (selectedRow == -1) {
-            javax.swing.JOptionPane.showMessageDialog(this, 
-                "Por favor, seleccione un artículo para eliminar.", 
-                "Selección requerida", 
-                javax.swing.JOptionPane.WARNING_MESSAGE);
+            javax.swing.JOptionPane.showMessageDialog(this, "Por favor, seleccione un artículo para eliminar.", "Selección requerida", javax.swing.JOptionPane.WARNING_MESSAGE);
             return;
         }
 
-    int confirm = javax.swing.JOptionPane.showConfirmDialog(this, 
-        "¿Está seguro de que desea eliminar este artículo?", 
-        "Confirmar eliminación", 
-        javax.swing.JOptionPane.YES_NO_OPTION);
+    int confirm = javax.swing.JOptionPane.showConfirmDialog(this, "¿Está seguro de que desea eliminar este artículo?", "Confirmar eliminación", javax.swing.JOptionPane.YES_NO_OPTION);
 
     if (confirm == javax.swing.JOptionPane.YES_OPTION) {
         int id = (int) tablaArticulos.getValueAt(selectedRow, 0);
@@ -254,22 +245,12 @@ public class Administrar_articulo extends javax.swing.JFrame {
             boolean eliminado = crud.eliminarArticulo(id);
 
             if (eliminado) {
-                javax.swing.JOptionPane.showMessageDialog(this, 
-                    "Artículo eliminado correctamente.", 
-                    "Éxito", 
-                    javax.swing.JOptionPane.INFORMATION_MESSAGE);
-                ((DefaultTableModel) tablaArticulos.getModel()).removeRow(selectedRow);
+                javax.swing.JOptionPane.showMessageDialog(this, "Artículo eliminado correctamente.", "Éxito", javax.swing.JOptionPane.INFORMATION_MESSAGE);((DefaultTableModel) tablaArticulos.getModel()).removeRow(selectedRow);
             } else {
-                javax.swing.JOptionPane.showMessageDialog(this, 
-                    "Error al eliminar el artículo.", 
-                    "Error", 
-                    javax.swing.JOptionPane.ERROR_MESSAGE);
+                javax.swing.JOptionPane.showMessageDialog(this, "Error al eliminar el artículo.", "Error", javax.swing.JOptionPane.ERROR_MESSAGE);
             }
         } catch (Exception e) {
-            javax.swing.JOptionPane.showMessageDialog(this, 
-                "Error al eliminar el artículo: " + e.getMessage(), 
-                "Error", 
-                javax.swing.JOptionPane.ERROR_MESSAGE);
+            javax.swing.JOptionPane.showMessageDialog(this, "Error al eliminar el artículo: " + e.getMessage(), "Error", javax.swing.JOptionPane.ERROR_MESSAGE);
         }
     }
     }//GEN-LAST:event_btnEliminarActionPerformed
@@ -277,10 +258,7 @@ public class Administrar_articulo extends javax.swing.JFrame {
     private void btnBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscarActionPerformed
                 String idTexto = txtId.getText().trim();
     if (idTexto.isEmpty()) {
-        javax.swing.JOptionPane.showMessageDialog(this, 
-            "Por favor, ingrese un ID para buscar.", 
-            "Campo vacío", 
-            javax.swing.JOptionPane.WARNING_MESSAGE);
+        javax.swing.JOptionPane.showMessageDialog(this, "Por favor, ingrese un ID para buscar.", "Campo vacío", javax.swing.JOptionPane.WARNING_MESSAGE);
         return;
     }
 
@@ -302,21 +280,12 @@ public class Administrar_articulo extends javax.swing.JFrame {
                 rs.getString("estado")
             });
         } else {
-            javax.swing.JOptionPane.showMessageDialog(this, 
-                "No se encontró un artículo con el ID proporcionado.", 
-                "No encontrado", 
-                javax.swing.JOptionPane.INFORMATION_MESSAGE);
+            javax.swing.JOptionPane.showMessageDialog(this, "No se encontró un artículo con el ID proporcionado.", "No encontrado", javax.swing.JOptionPane.INFORMATION_MESSAGE);
         }
     } catch (NumberFormatException e) {
-        javax.swing.JOptionPane.showMessageDialog(this, 
-            "El ID debe ser un número entero.", 
-            "Formato inválido", 
-            javax.swing.JOptionPane.ERROR_MESSAGE);
+        javax.swing.JOptionPane.showMessageDialog(this, "El ID debe ser un número entero.", "Formato inválido", javax.swing.JOptionPane.ERROR_MESSAGE);
     } catch (Exception e) {
-        javax.swing.JOptionPane.showMessageDialog(this, 
-            "Error al buscar el artículo: " + e.getMessage(), 
-            "Error", 
-            javax.swing.JOptionPane.ERROR_MESSAGE);
+        javax.swing.JOptionPane.showMessageDialog(this, "Error al buscar el artículo: " + e.getMessage(), "Error", javax.swing.JOptionPane.ERROR_MESSAGE);
     }
     }//GEN-LAST:event_btnBuscarActionPerformed
 
@@ -339,10 +308,7 @@ public class Administrar_articulo extends javax.swing.JFrame {
             });
         }
     } catch (Exception e) {
-        javax.swing.JOptionPane.showMessageDialog(this, 
-            "Error al obtener los artículos: " + e.getMessage(), 
-            "Error", 
-            javax.swing.JOptionPane.ERROR_MESSAGE);
+        javax.swing.JOptionPane.showMessageDialog(this, "Error al obtener los artículos: " + e.getMessage(), "Error", javax.swing.JOptionPane.ERROR_MESSAGE);
     }
     }//GEN-LAST:event_btnMostrar_todosActionPerformed
 

@@ -395,20 +395,14 @@ public class Form_comprar_articulos extends javax.swing.JFrame {
         // Validar que se haya seleccionado un artículo
         int filaSeleccionada = tablaArticulos.getSelectedRow();
         if (filaSeleccionada < 0) {
-            JOptionPane.showMessageDialog(this, 
-                "Debe seleccionar un artículo de la tabla", 
-                "Error", 
-                JOptionPane.ERROR_MESSAGE);
+            JOptionPane.showMessageDialog(this, "Debe seleccionar un artículo de la tabla",  "Error",    JOptionPane.ERROR_MESSAGE);
             return;
         }
 
         // Obtener datos del formulario
         int cantidadSolicitada = Integer.parseInt(txt_cantidad.getText());
         if (cantidadSolicitada <= 0) {
-            JOptionPane.showMessageDialog(this, 
-                "La cantidad debe ser mayor que cero", 
-                "Error", 
-                JOptionPane.ERROR_MESSAGE);
+            JOptionPane.showMessageDialog(this,   "La cantidad debe ser mayor que cero",  "Error",   JOptionPane.ERROR_MESSAGE);
             return;
         }
 
@@ -421,10 +415,7 @@ public class Form_comprar_articulos extends javax.swing.JFrame {
         int stockDisponible = articulosCrud.obtenerStockArticulo(idArticulo);
         
         if (cantidadSolicitada > stockDisponible) {
-            JOptionPane.showMessageDialog(this, 
-                "No hay suficiente stock disponible. Stock actual: " + stockDisponible, 
-                "Error", 
-                JOptionPane.ERROR_MESSAGE);
+            JOptionPane.showMessageDialog(this,  "No hay suficiente stock disponible. Stock actual: " + stockDisponible,  "Error",  JOptionPane.ERROR_MESSAGE);
             return;
         }
 
@@ -436,10 +427,7 @@ public class Form_comprar_articulos extends javax.swing.JFrame {
             int nuevoStock = stockDisponible - cantidadSolicitada;
             articulosCrud.actualizarStockArticulo(idArticulo, nuevoStock);
             
-            JOptionPane.showMessageDialog(this, 
-                "Pedido realizado con éxito", 
-                "Éxito", 
-                JOptionPane.INFORMATION_MESSAGE);
+            JOptionPane.showMessageDialog(this, "Pedido realizado con éxito",   "Éxito", JOptionPane.INFORMATION_MESSAGE);
             
             // Actualizar la interfaz
             cargarTablaArticulos();
@@ -452,22 +440,13 @@ public class Form_comprar_articulos extends javax.swing.JFrame {
             txt_stock.setText("");
             txt_cantidad.setText("");
         } else {
-            JOptionPane.showMessageDialog(this, 
-                "Error al realizar el pedido", 
-                "Error", 
-                JOptionPane.ERROR_MESSAGE);
+            JOptionPane.showMessageDialog(this,   "Error al realizar el pedido",    "Error",    JOptionPane.ERROR_MESSAGE);
         }
         
     } catch (NumberFormatException e) {
-        JOptionPane.showMessageDialog(this, 
-            "Por favor ingrese valores numéricos válidos", 
-            "Error", 
-            JOptionPane.ERROR_MESSAGE);
+        JOptionPane.showMessageDialog(this, "Por favor ingrese valores numéricos válidos",  "Error",  JOptionPane.ERROR_MESSAGE);
     } catch (SQLException e) {
-        JOptionPane.showMessageDialog(this, 
-            "Error en la base de datos: " + e.getMessage(), 
-            "Error", 
-            JOptionPane.ERROR_MESSAGE);
+        JOptionPane.showMessageDialog(this,  "Error en la base de datos: " + e.getMessage(),  "Error", JOptionPane.ERROR_MESSAGE);
     }
     
     }//GEN-LAST:event_btn_realizar_pedidoMouseClicked

@@ -89,8 +89,33 @@ public class ARTICULOS_CRUD {
         
     }
     
+    public ResultSet reporteArticulos(){
+        String slqTodos = "SELECT * FROM vista_inventario_articulos;";
+        
+        try{
+            PreparedStatement ps = conexion.prepareStatement(slqTodos);
+            return ps.executeQuery();
+        }
+        catch(SQLException s){
+            System.out.println("Error al consultar departamentos"+s.getMessage());
+            return null;
+        }
+        
+    }
     
-    
+    public ResultSet reporteArticulos_por_fecha(){
+        String slqTodos = "SELECT * FROM vista_pedidos_por_fecha;";
+        
+        try{
+            PreparedStatement ps = conexion.prepareStatement(slqTodos);
+            return ps.executeQuery();
+        }
+        catch(SQLException s){
+            System.out.println("Error al consultar departamentos"+s.getMessage());
+            return null;
+        }
+        
+    }
     
     
     

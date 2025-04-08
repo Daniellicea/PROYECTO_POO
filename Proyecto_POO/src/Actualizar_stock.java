@@ -157,10 +157,7 @@ public class Actualizar_stock extends javax.swing.JFrame {
         String nuevoStockTexto = txtStock_nuevo.getText().trim();
 
         if (idTexto.isEmpty() || nuevoStockTexto.isEmpty()) {
-            javax.swing.JOptionPane.showMessageDialog(this,
-                    "Por favor, complete todos los campos.",
-                    "Campos vacíos",
-                    javax.swing.JOptionPane.WARNING_MESSAGE);
+            javax.swing.JOptionPane.showMessageDialog(this,"Por favor, complete todos los campos.","Campos vacíos",javax.swing.JOptionPane.WARNING_MESSAGE);
             return;
         }
 
@@ -172,27 +169,15 @@ public class Actualizar_stock extends javax.swing.JFrame {
             boolean actualizado = crud.actualizarArticulo(id, null, null, 0, nuevoStock, null);
 
             if (actualizado) {
-                javax.swing.JOptionPane.showMessageDialog(this,
-                        "Stock actualizado correctamente.",
-                        "Éxito",
-                        javax.swing.JOptionPane.INFORMATION_MESSAGE);
+                javax.swing.JOptionPane.showMessageDialog(this,"Stock actualizado correctamente.","Éxito",javax.swing.JOptionPane.INFORMATION_MESSAGE);
                 this.dispose(); // Cerrar el formulario
             } else {
-                javax.swing.JOptionPane.showMessageDialog(this,
-                        "Error al actualizar el stock.",
-                        "Error",
-                        javax.swing.JOptionPane.ERROR_MESSAGE);
+                javax.swing.JOptionPane.showMessageDialog(this,"Error al actualizar el stock.","Error",javax.swing.JOptionPane.ERROR_MESSAGE);
             }
         } catch (NumberFormatException e) {
-            javax.swing.JOptionPane.showMessageDialog(this,
-                    "El ID y el nuevo stock deben ser números enteros.",
-                    "Formato inválido",
-                    javax.swing.JOptionPane.ERROR_MESSAGE);
+            javax.swing.JOptionPane.showMessageDialog(this,"El ID y el nuevo stock deben ser números enteros.","Formato inválido",javax.swing.JOptionPane.ERROR_MESSAGE);
         } catch (Exception e) {
-            javax.swing.JOptionPane.showMessageDialog(this,
-                    "Error al actualizar el stock: " + e.getMessage(),
-                    "Error",
-                    javax.swing.JOptionPane.ERROR_MESSAGE);
+            javax.swing.JOptionPane.showMessageDialog(this,"Error al actualizar el stock: " + e.getMessage(),"Error",javax.swing.JOptionPane.ERROR_MESSAGE);
         }
     }//GEN-LAST:event_btnGuardarActionPerformed
 

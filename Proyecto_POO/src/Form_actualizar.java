@@ -37,16 +37,10 @@ private void cargarDatosUsuario() {
                 }
             }
         } else {
-            JOptionPane.showMessageDialog(this, 
-                "No se encontraron datos para el usuario con ID: " + idUsuario, 
-                "Error", 
-                JOptionPane.ERROR_MESSAGE);
+            JOptionPane.showMessageDialog(this, "No se encontraron datos para el usuario con ID: " + idUsuario, "Error", JOptionPane.ERROR_MESSAGE);
         }
     } catch (Exception e) {
-        JOptionPane.showMessageDialog(this, 
-            "Error al cargar datos del usuario: " + e.getMessage(), 
-            "Error", 
-            JOptionPane.ERROR_MESSAGE);
+        JOptionPane.showMessageDialog(this, "Error al cargar datos del usuario: " + e.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
     }
 }
 
@@ -414,18 +408,12 @@ private void cargarDatosUsuario() {
     
     // Validaciones básicas
     if (nombre.isEmpty() || apellidos.isEmpty() || correo.isEmpty() || contrasenia.isEmpty()) {
-        JOptionPane.showMessageDialog(this, 
-            "Todos los campos son obligatorios", 
-            "Error", 
-            JOptionPane.ERROR_MESSAGE);
+        JOptionPane.showMessageDialog(this, "Todos los campos son obligatorios", "Error", JOptionPane.ERROR_MESSAGE);
         return;
     }
     
     if (!correo.matches("^[\\w-.]+@([\\w-]+\\.)+[\\w-]{2,4}$")) {
-        JOptionPane.showMessageDialog(this, 
-            "Formato de correo electrónico inválido", 
-            "Error", 
-            JOptionPane.ERROR_MESSAGE);
+        JOptionPane.showMessageDialog(this, "Formato de correo electrónico inválido",  "Error", JOptionPane.ERROR_MESSAGE);
         return;
     }
     
@@ -434,26 +422,17 @@ private void cargarDatosUsuario() {
         boolean actualizado = crud.actualizar_datos(idUsuario, nombre, apellidos, correo, contrasenia, departamento);
         
         if (actualizado) {
-            JOptionPane.showMessageDialog(this, 
-                "Usuario actualizado correctamente", 
-                "Éxito", 
-                JOptionPane.INFORMATION_MESSAGE);
+            JOptionPane.showMessageDialog(this,  "Usuario actualizado correctamente",   "Éxito",   JOptionPane.INFORMATION_MESSAGE);
             
             // Regresar al formulario de administración
             Form_administrar_usuarios adminUsuarios = new Form_administrar_usuarios();
             adminUsuarios.setVisible(true);
             this.dispose();
         } else {
-            JOptionPane.showMessageDialog(this, 
-                "Error al actualizar el usuario", 
-                "Error", 
-                JOptionPane.ERROR_MESSAGE);
+            JOptionPane.showMessageDialog(this,  "Error al actualizar el usuario", "Error", JOptionPane.ERROR_MESSAGE);
         }
     } catch (Exception e) {
-        JOptionPane.showMessageDialog(this, 
-            "Error al actualizar: " + e.getMessage(), 
-            "Error", 
-            JOptionPane.ERROR_MESSAGE);
+        JOptionPane.showMessageDialog(this,  "Error al actualizar: " + e.getMessage(), "Error",  JOptionPane.ERROR_MESSAGE);
     }
 
     }//GEN-LAST:event_btn_registrar_usuarioMouseClicked

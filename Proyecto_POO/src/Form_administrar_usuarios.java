@@ -360,21 +360,12 @@ public class Form_administrar_usuarios extends javax.swing.JFrame {
                     rs.getString("departamento"),                   
                 });
             } else {
-                JOptionPane.showMessageDialog(this, 
-                    "No se encontró un usuario con el ID proporcionado.", 
-                    "No encontrado", 
-                    JOptionPane.INFORMATION_MESSAGE);
+                JOptionPane.showMessageDialog(this,  "No se encontró un usuario con el ID proporcionado.",  "No encontrado", JOptionPane.INFORMATION_MESSAGE);
             }
         } catch (NumberFormatException e) {
-            JOptionPane.showMessageDialog(this, 
-                "El ID debe ser un número entero.", 
-                "Formato inválido", 
-                JOptionPane.ERROR_MESSAGE);
+            JOptionPane.showMessageDialog(this,  "El ID debe ser un número entero.", "Formato inválido", JOptionPane.ERROR_MESSAGE);
         } catch (Exception e) {
-            JOptionPane.showMessageDialog(this, 
-                "Error al buscar el usuario: " + e.getMessage(), 
-                "Error", 
-                JOptionPane.ERROR_MESSAGE);
+            JOptionPane.showMessageDialog(this, "Error al buscar el usuario: " + e.getMessage(),   "Error", JOptionPane.ERROR_MESSAGE);
         }
     }//GEN-LAST:event_btn_buscar_por_idMouseClicked
 
@@ -398,10 +389,7 @@ public class Form_administrar_usuarios extends javax.swing.JFrame {
             }
         } catch(SQLException x) {
             System.out.println("Error al llenar la tabla: " + x.getMessage());
-            JOptionPane.showMessageDialog(this, 
-                "Error al cargar los usuarios: " + x.getMessage(), 
-                "Error", 
-                JOptionPane.ERROR_MESSAGE);
+            JOptionPane.showMessageDialog(this,  "Error al cargar los usuarios: " + x.getMessage(),   "Error",   JOptionPane.ERROR_MESSAGE);
         }
     }//GEN-LAST:event_btn_buscar_todosMouseClicked
 
@@ -409,17 +397,11 @@ public class Form_administrar_usuarios extends javax.swing.JFrame {
         // TODO add your handling code here:
         int selectedRow = jTable1.getSelectedRow();
         if (selectedRow == -1) {
-            JOptionPane.showMessageDialog(this, 
-                "Por favor, seleccione un usuario para eliminar.", 
-                "Selección requerida", 
-                JOptionPane.WARNING_MESSAGE);
+            JOptionPane.showMessageDialog(this,  "Por favor, seleccione un usuario para eliminar.",  "Selección requerida", JOptionPane.WARNING_MESSAGE);
             return;
         }
 
-        int confirm = JOptionPane.showConfirmDialog(this, 
-            "¿Está seguro de que desea eliminar este usuario permanentemente?", 
-            "Confirmar eliminación", 
-            JOptionPane.YES_NO_OPTION);
+        int confirm = JOptionPane.showConfirmDialog(this,   "¿Está seguro de que desea eliminar este usuario permanentemente?",  "Confirmar eliminación",  JOptionPane.YES_NO_OPTION);
 
         if (confirm == JOptionPane.YES_OPTION) {
             int id = (int) jTable1.getValueAt(selectedRow, 0);
@@ -429,22 +411,13 @@ public class Form_administrar_usuarios extends javax.swing.JFrame {
                 boolean eliminado = crud.eliminarUsuario(id);
 
                 if (eliminado) {
-                    JOptionPane.showMessageDialog(this, 
-                        "Usuario eliminado correctamente.", 
-                        "Éxito", 
-                        JOptionPane.INFORMATION_MESSAGE);
+                    JOptionPane.showMessageDialog(this,  "Usuario eliminado correctamente.",           "Éxito",  JOptionPane.INFORMATION_MESSAGE);
                     limpiar_campo();
                 } else {
-                    JOptionPane.showMessageDialog(this, 
-                        "Error al eliminar el usuario.", 
-                        "Error", 
-                        JOptionPane.ERROR_MESSAGE);
+                    JOptionPane.showMessageDialog(this,  "Error al eliminar el usuario.",    "Error",  JOptionPane.ERROR_MESSAGE);
                 }
             } catch (Exception e) {
-                JOptionPane.showMessageDialog(this, 
-                    "Error al eliminar el usuario: " + e.getMessage(), 
-                    "Error", 
-                    JOptionPane.ERROR_MESSAGE);
+                JOptionPane.showMessageDialog(this, "Error al eliminar el usuario: " + e.getMessage(),  "Error",  JOptionPane.ERROR_MESSAGE);
             }
             
         }
@@ -472,10 +445,7 @@ public class Form_administrar_usuarios extends javax.swing.JFrame {
         int filaSeleccionada = jTable1.getSelectedRow();
         
         if (filaSeleccionada == -1) {
-            JOptionPane.showMessageDialog(this, 
-                "Por favor seleccione un usuario de la tabla", 
-                "Advertencia", 
-                JOptionPane.WARNING_MESSAGE);
+            JOptionPane.showMessageDialog(this,   "Por favor seleccione un usuario de la tabla",    "Advertencia",  JOptionPane.WARNING_MESSAGE);
             return;
         }
         
@@ -488,10 +458,7 @@ public class Form_administrar_usuarios extends javax.swing.JFrame {
         this.dispose();
         
     } catch (Exception e) {
-        JOptionPane.showMessageDialog(this, 
-            "Error al intentar actualizar el usuario: " + e.getMessage(), 
-            "Error", 
-            JOptionPane.ERROR_MESSAGE);
+        JOptionPane.showMessageDialog(this, "Error al intentar actualizar el usuario: " + e.getMessage(), "Error",   JOptionPane.ERROR_MESSAGE);
     }
     }//GEN-LAST:event_btn_actualizarMouseClicked
 
